@@ -290,7 +290,8 @@ def parse_sales_metrics(orders, catalog_map=None):
                 hourly_breakdown[hour_key]["items"] += qty
 
             name_lower = item_name.lower()
-            if "mochi" in name_lower or "butter mochi" in name_lower:
+            cat_lower = category.lower() if category else ""
+            if "mochi" in name_lower or "butter mochi" in name_lower or "butter mochi" in cat_lower:
                 order_has_mochi = True
                 mochi_item_count += qty
                 mochi_revenue += item_total
